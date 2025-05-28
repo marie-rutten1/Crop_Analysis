@@ -1,0 +1,6 @@
+SELECT 
+	CROP,
+	SUM(PRODUCTION) AS Total_Production
+FROM CROP_YIELD
+GROUP BY CROP
+ORDER BY Total_Production DESC; 

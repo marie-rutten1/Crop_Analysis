@@ -1,0 +1,15 @@
+SELECT 
+	Crop,
+	State, 
+	Crop_Year,
+	Season,
+	Annual_Rainfall,
+	Fertilizer,
+	Pesticide,
+	Yield
+FROM CROP_YIELD
+WHERE CROP = 'Rice' 
+AND Fertilizer < ( SELECT PERCENTILE_CONT(0.25) WITHIN GROUP (ORDER BY FERTILIZER) AS Fertilizer_25th_Percentile FROM CROP_YIELD WHERE CROP = 'Rice')
+AND Pesticide < (SELECT	PERCENTILE_CONT(0.25) WITHIN GROUP (ORDER BY PESTICIDE) AS Pesticide_25th_Percentile FROM CROP_YIELD WHERE CROP = 'Rice')
+AND Yield > (SELECT PERCENTILE_CONT(0.75) WITHIN GROUP (ORDER BY Yield) AS Yield_75th_Percentile FROM CROP_YIELD WHERE CROP = 'Rice')
+ORDER BY Yield DESC;
