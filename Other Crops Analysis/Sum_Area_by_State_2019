@@ -1,4 +1,5 @@
 SELECT State, SUM(area)
 FROM crop_yield
+WHERE Crop_Year = 2019
 GROUP BY State
 ORDER BY SUM(area) DESC;
