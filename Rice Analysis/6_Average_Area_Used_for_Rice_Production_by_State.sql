@@ -4,4 +4,4 @@ SELECT
 FROM Crop_Yield
 WHERE Crop = 'Rice'
 GROUP BY State
-ORDER BY AVG(Area) DESC;
+ORDER BY AVG_Area DESC;
