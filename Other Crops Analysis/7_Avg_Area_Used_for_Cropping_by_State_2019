@@ -1,4 +1,6 @@
-SELECT State, SUM(area)
+SELECT 
+	State, 
+	AVG(area) AS AVG_Area_Used
 FROM crop_yield
 WHERE Crop_Year = 2019
 GROUP BY State
