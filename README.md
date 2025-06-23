@@ -15,3 +15,5 @@ Additional areas of investigation include:
 - Looking at trends in production and input efficiency.
 
 This analysis was performed using SQL (PostgreSQL), with plans to visualize and expand on insights using additional tools such as Excel or Power BI.
+
+Data sourced from: https://www.kaggle.com/datasets/saincoder404/crop-yield-data-india
